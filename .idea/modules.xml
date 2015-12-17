@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CarPad.iml" filepath="$PROJECT_DIR$/CarPad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/carpad/carpad.iml" filepath="$PROJECT_DIR$/carpad/carpad.iml" />
+    </modules>
+  </component>
+</project>

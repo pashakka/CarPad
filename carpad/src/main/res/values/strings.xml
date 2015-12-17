@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CarPad</string>
+    <string name="add_new">Добавить</string>
+    <string name="remove">Удалить</string>
+    <string name="cancel">Отмена</string>
+
+</resources>
