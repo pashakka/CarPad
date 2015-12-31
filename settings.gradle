@@ -1,1 +1,1 @@
-include ':carpad'
+include ':carpad', ':learn'
