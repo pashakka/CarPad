@@ -4,4 +4,7 @@
     <color name="notepad_lines">#FF0000FF</color>
     <color name="notepad_margin">#90FF0000</color>
     <color name="notepad_text">#AA0000FF</color>
+    <color name="date_view">#ffa000</color>
+    <color name="type_view">#2962ff</color>
+    <color name="subtype_view">#2962ff</color>
 </resources>

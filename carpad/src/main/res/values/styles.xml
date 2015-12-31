@@ -1,9 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
     <!-- My theme. -->
     <style name="ToDoTheme" parent="android:Theme.Black">
         <item name="android:textSize">12sp</item>

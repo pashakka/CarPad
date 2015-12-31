@@ -5,5 +5,8 @@
     <string name="add_new">Добавить</string>
     <string name="remove">Удалить</string>
     <string name="cancel">Отмена</string>
+    <string name="amt">Кол-во</string>
+    <string name="price">Цена</string>
+    <string name="sum">Сумма</string>
 
 </resources>
