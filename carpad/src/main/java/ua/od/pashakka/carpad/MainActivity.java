@@ -5,41 +5,53 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Date;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+import ua.od.pashakka.carpad.data.PadRec;
+import ua.od.pashakka.carpad.data.PadRecSubType;
+import ua.od.pashakka.carpad.data.PadRecType;
+import ua.od.pashakka.carpad.data.Unit;
 
-    private EditText _edText;
-    private ArrayList<String> _todoItems;
-    private ArrayAdapter<String> _todoAdapter;
+public class MainActivity extends Activity {
+
+    private ArrayList<PadRec> _records;
+    private PadRecViewAdapter _padRecAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        _edText = (EditText) findViewById(R.id.edText);
-
-        Button btnAdd = (Button) findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(this);
         ListView lv = (ListView) findViewById(R.id.listRecords);
 
-        _todoItems = new ArrayList<String>();
-        _todoAdapter = new ArrayAdapter<String>(this,
-                R.layout.todolist_item,
-                _todoItems);
-        lv.setAdapter(_todoAdapter);
+        _records = fillRecords();
+        _padRecAdapter = new PadRecViewAdapter(
+                getApplicationContext(),
+                _records);
+        lv.setAdapter(_padRecAdapter);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btnAdd) {
-            _todoItems.add(0, _edText.getText().toString());
-            _todoAdapter.notifyDataSetChanged();
-            _edText.setText("");
-        }
+    private ArrayList<PadRec> fillRecords() {
+        ArrayList<PadRec> recs = new ArrayList<PadRec>();
+        recs.add(new PadRec(
+                1, new Date(), new PadRecType(1, "Type1"), new PadRecSubType(1, "SubType1"),
+                new Unit(1, "L"), 1.0F, 10.0F, 10.0F, "Note litres"
+        ));
+        recs.add(new PadRec(
+                2, new Date(), new PadRecType(2, "Type2"), new PadRecSubType(2, "SubType2"),
+                new Unit(2, "UAH"), 2.0F, 0.0F, 2.0F, "Note hrivhas"
+        ));
+        recs.add(new PadRec(
+                3, new Date(), new PadRecType(2, "Type2"), new PadRecSubType(2, "SubType2"),
+                new Unit(2, "UAH"), 6.0F, 0.0F, 6.0F, "Note hrivhas"
+        ));
+        recs.add(new PadRec(
+                1, new Date(), new PadRecType(1, "Type1"), new PadRecSubType(1, "SubType1"),
+                new Unit(1, "L"), 1.0F, 10.0F, 10.0F, "Note litres"
+        ));
+        return recs;
     }
 }
