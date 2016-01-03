@@ -41,13 +41,12 @@
             android:textColor="@color/type_view"
             android:id="@+id/txtPadRecSubType" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Large Text"
-            android:textStyle="italic"
-            android:id="@+id/txtPadRecNote" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/paneAddAttr"></LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout

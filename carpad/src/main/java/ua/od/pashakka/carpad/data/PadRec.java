@@ -1,6 +1,10 @@
 package ua.od.pashakka.carpad.data;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import ua.od.pashakka.carpad.data.testData.PadRecTypeAttrValTestData;
 
 /**
  * CarPad record
@@ -10,25 +14,21 @@ public class PadRec {
     private Date _date;
     private PadRecType _typeRef;
     private PadRecSubType _subTypeRef;
-    private Unit _unitRef;
     private float _amt;
     private float _price;
     private float _sum;
-    private String _note;
 
     public PadRec() {
     }
 
-    public PadRec(int id, Date date, PadRecType typeRef, PadRecSubType subTypeRef, Unit unitRef, float amt, float price, float sum, String note) {
+    public PadRec(int id, Date date, PadRecType typeRef, PadRecSubType subTypeRef, float amt, float price, float sum) {
         _id = id;
         _date = date;
         _typeRef = typeRef;
         _subTypeRef = subTypeRef;
-        _unitRef = unitRef;
         _amt = amt;
         _price = price;
         _sum = sum;
-        _note = note;
     }
 
     public int getId() {
@@ -63,14 +63,6 @@ public class PadRec {
         _subTypeRef = subTypeRef;
     }
 
-    public Unit getUnitRef() {
-        return _unitRef;
-    }
-
-    public void setUnitRef(Unit unitRef) {
-        _unitRef = unitRef;
-    }
-
     public float getAmt() {
         return _amt;
     }
@@ -95,11 +87,15 @@ public class PadRec {
         _sum = sum;
     }
 
-    public String getNote() {
-        return _note;
-    }
+    public List<PadRecTypeAttrVal> getTypeAttrValList() {
+        List<PadRecTypeAttrVal> typeAttrValList = new ArrayList<>();
 
-    public void setNote(String note) {
-        _note = note;
+        for (PadRecTypeAttrVal typeAttrVal : PadRecTypeAttrValTestData.getPADRECTYPEATTRVALList()) {
+            if (typeAttrVal.getPadRecRef().getId() == this.getId()) {
+                typeAttrValList.add(typeAttrVal);
+            }
+        }
+
+        return typeAttrValList;
     }
 }
