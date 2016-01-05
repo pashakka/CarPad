@@ -23,9 +23,11 @@ public class PadRecTypeAttrTestData {
     public final static PadRecTypeAttr PADRECTYPEATTR_FUEL_STATION =
             new PadRecTypeAttr(ATTR_FUEL_STATION, PadRecTypeTestData.PADRECTYPE_FUEL,
                     "Заправка", PadRecTypeAttr.VALTYPE_STRING);
+
     public final static PadRecTypeAttr PADRECTYPEATTR_WASH_COMPANY =
             new PadRecTypeAttr(ATTR_WASH_COMPANY, PadRecTypeTestData.PADRECTYPE_WASH,
                     "Мойка", PadRecTypeAttr.VALTYPE_STRING);
+
     public final static PadRecTypeAttr PADRECTYPEATTR_REPAIR_NOTE =
             new PadRecTypeAttr(ATTR_REPAIR_NOTE, PadRecTypeTestData.PADRECTYPE_REPAIR,
                     "Описание", PadRecTypeAttr.VALTYPE_STRING);

@@ -4,7 +4,10 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import ua.od.pashakka.carpad.R;
 
 /**
  * Attributes for PadRecType
@@ -61,6 +64,24 @@ public class PadRecTypeAttr {
 
     public void setValType(short valType) {
         _valType = valType;
+    }
+
+    public View getView(Context ctx) {
+        LinearLayout ll = new LinearLayout(ctx);
+        ll.setOrientation(LinearLayout.HORIZONTAL);
+        ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
+        TextView txtName = new TextView(ctx);
+        txtName.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        txtName.setText(this.getName() + ": ");
+
+        TextView txtVal = new TextView(ctx);
+        txtVal.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        txtVal.setId(R.id.);
+
+        return ll;
     }
 
 }

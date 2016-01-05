@@ -13,7 +13,7 @@ public class UnitTestData {
     public final static Unit UNIT_LITRES =
             new Unit(LITRES, "л.");
     public final static Unit UNIT_CNT =
-            new Unit(LITRES, "шт.");
+            new Unit(CNT, "шт.");
 
     private static List<Unit> UNITList = new ArrayList<Unit>();
 

@@ -15,6 +15,7 @@ import java.util.List;
 import ua.od.pashakka.carpad.data.PadRec;
 import ua.od.pashakka.carpad.data.PadRecTypeAttr;
 import ua.od.pashakka.carpad.data.PadRecTypeAttrVal;
+import ua.od.pashakka.carpad.data.testData.PadRecTypeTestData;
 
 public class PadRecViewAdapter extends BaseAdapter {
 
@@ -44,14 +45,20 @@ public class PadRecViewAdapter extends BaseAdapter {
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return _padRecs.get(position).getTypeRef().getId();
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        PadRec p = getPadRec(position);
+
         // используем созданные, но не используемые view
         View view = convertView;
-        if (view == null) {
+        if (view == null || ) {
             view = _lInflater.inflate(R.layout.padrec_view, parent, false);
         }
 
-        PadRec p = getPadRec(position);
 
         // заполняем View
         ((TextView) view.findViewById(R.id.txtPadRecDate)).setText(String.format("%1$tY-%1$tm-%1$td %1$ta", p.getDate()));
@@ -59,7 +66,9 @@ public class PadRecViewAdapter extends BaseAdapter {
                 p.getTypeRef() != null ? p.getTypeRef().toString() : "null");
         ((TextView) view.findViewById(R.id.txtPadRecSubType)).setText(
                 p.getSubTypeRef() != null ? p.getSubTypeRef().toString() : "null");
+
         viewAddAttr(p, view);
+
         ((EditText) view.findViewById(R.id.edCarPadAmt)).setText(p.getAmt() + "");
         ((EditText) view.findViewById(R.id.edCarPadPrice)).setText(p.getPrice() + "");
         ((EditText) view.findViewById(R.id.edCarPadSum)).setText(p.getSum() + "");
@@ -70,8 +79,8 @@ public class PadRecViewAdapter extends BaseAdapter {
     private void viewAddAttr(PadRec p, View view) {
         if (!p.getTypeRef().getAttrList().isEmpty()) {
             LinearLayout ll = (LinearLayout) view.findViewById(R.id.paneAddAttr);
-            for (PadRecTypeAttrVal typeAttrVal : p.getTypeAttrValList()) {
-                ll.addView(typeAttrVal.getView(_ctx));
+            for (PadRecTypeAttr typeAttr : PadRecTypeTestData.getPADRECTYPEList(p.getTypeRef().getId())) {
+                ll.addView(typeAttr.getView(_ctx));
             }
         }
     }

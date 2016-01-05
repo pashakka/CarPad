@@ -59,7 +59,7 @@ public class PadRecTestData {
         );
 
         padRec = new PadRec(
-                2,
+                3,
                 new GregorianCalendar(2015, 1, 6).getTime(),
                 PadRecTypeTestData.PADRECTYPE_WASH,
                 null,
@@ -74,7 +74,7 @@ public class PadRecTestData {
         );
 
         padRec = new PadRec(
-                2,
+                4,
                 new GregorianCalendar(2015, 1, 10).getTime(),
                 PadRecTypeTestData.PADRECTYPE_REPAIR,
                 null,

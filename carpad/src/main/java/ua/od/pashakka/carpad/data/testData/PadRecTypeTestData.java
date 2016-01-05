@@ -33,4 +33,13 @@ public class PadRecTypeTestData {
     public static List<PadRecType> getPADRECTYPEList() {
         return PADRECTYPEList;
     }
+
+    public static List<PadRecType> getPADRECTYPEList(int type) {
+        List<PadRecType> padRecTypeList = new ArrayList<>();
+        for (PadRecType padRecType : PADRECTYPEList) {
+            if (padRecType.getId() == type)
+                padRecTypeList.add(padRecType);
+        }
+        return padRecTypeList;
+    }
 }
