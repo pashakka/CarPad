@@ -70,16 +70,19 @@ public class PadRecTypeAttr {
         LinearLayout ll = new LinearLayout(ctx);
         ll.setOrientation(LinearLayout.HORIZONTAL);
         ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        ll.setTag(this.getId());
 
         TextView txtName = new TextView(ctx);
         txtName.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
         txtName.setText(this.getName() + ": ");
+        ll.addView(txtName);
 
         TextView txtVal = new TextView(ctx);
         txtVal.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        txtVal.setId(R.id.);
+        txtVal.setId(R.id.type_attr_value);
+        ll.addView(txtVal);
 
         return ll;
     }

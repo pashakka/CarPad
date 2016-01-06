@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ua.od.pashakka.carpad.data.PadRecType;
+import ua.od.pashakka.carpad.data.PadRecTypeAttr;
 
 public class PadRecTypeTestData {
 
@@ -21,7 +22,7 @@ public class PadRecTypeTestData {
     public final static PadRecType PADRECTYPE_WASH =
             new PadRecType(TYPE_WASH, UnitTestData.UNIT_CNT, "Мойка");
 
-    private static List<PadRecType> PADRECTYPEList = new ArrayList<PadRecType>();
+    private static List<PadRecType> PADRECTYPEList = new ArrayList<>();
 
     static {
         PADRECTYPEList.add(PADRECTYPE_FUEL);
@@ -32,14 +33,5 @@ public class PadRecTypeTestData {
 
     public static List<PadRecType> getPADRECTYPEList() {
         return PADRECTYPEList;
-    }
-
-    public static List<PadRecType> getPADRECTYPEList(int type) {
-        List<PadRecType> padRecTypeList = new ArrayList<>();
-        for (PadRecType padRecType : PADRECTYPEList) {
-            if (padRecType.getId() == type)
-                padRecTypeList.add(padRecType);
-        }
-        return padRecTypeList;
     }
 }

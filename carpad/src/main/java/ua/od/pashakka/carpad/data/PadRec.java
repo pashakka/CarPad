@@ -98,4 +98,14 @@ public class PadRec {
 
         return typeAttrValList;
     }
+
+    public PadRecTypeAttrVal getTypeAttrValue(int typeAttrId) {
+        for (PadRecTypeAttrVal typeAttrVal : PadRecTypeAttrValTestData.getPADRECTYPEATTRVALList()) {
+            if (typeAttrVal.getPadRecRef().getId() == this.getId()
+                    && typeAttrVal.getPadRecTypeAttrRef().getId() == typeAttrId) {
+                return typeAttrVal;
+            }
+        }
+        return null;
+    }
 }
